@@ -8,7 +8,8 @@
     <?php foreach ($posts as $post): ?>
         <tr>
             <td>
-                <?php echo $this->Html->link(h($post['Post']['title']), array('action' => 'view', $post['Post']['id'])); ?>
+                <?php echo $this->Html->link(h($post['Post']['title']), 
+                array('action' => 'view', $post['Post']['id'])); ?>
 
             </td>
             <td>
