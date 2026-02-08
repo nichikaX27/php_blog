@@ -1,14 +1,21 @@
 # User specific & automatically generated files #
 #################################################
 /app/Config/database.php
+/app/Config/core.php
+
 /app/tmp
+!/app/tmp/.gitkeep
+
 /lib/Cake/Console/Templates/skel/tmp/
-/plugins
-/vendors
+
+/plugins/*
+/vendors/*
+
 /build
 /dist
 /tags
 *.mo
+
 
 # IDE and editor specific files #
 #################################

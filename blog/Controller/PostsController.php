@@ -31,8 +31,8 @@ class PostsController extends AppController {
     if ($this->request->is('post')) {
         // データを保存する
         if ($this->Post->save($this->request->data)) {
-            // 成功メッセージを表示（Sessionヘルパーが必要）
-            $this->Session->setFlash('記事を保存しました！');
+            // 成功メッセージを表示
+            $this->Session->setFlash('記事を保存しました！', 'default', array('class' => 'success'));
             // 一覧画面にリダイレクト
             return $this->redirect(array('action' => 'index'));
         }
