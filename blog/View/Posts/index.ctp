@@ -5,6 +5,7 @@
             array('action' => 'add'), 
             array('class' => 'btn')); ?>
     </p>
+
     <tr>
         <th>タイトル</th>
         <th>作成日</th>
@@ -19,6 +20,14 @@
             <td>
                 <?php echo $post['Post']['created']; ?>
             </td>
+
+                <td>
+    <?php echo $this->Html->link('編集', 
+        array('action' => 'edit', $post['Post']['id']),
+        array('class' => 'btn') 
+    ); ?>
+</td>
+
         </tr>
     <?php endforeach; ?>
 </table>

@@ -38,4 +38,24 @@ class PostsController extends AppController {
         }
     }
   }
+
+    public function edit($id = null) {
+
+    $this->Post->id = $id;
+
+    if (!$this->Post->exists()) {
+        throw new NotFoundException('記事が見つかりません');
+    }
+
+    if($this->request->is("get")){
+        $this->request->data = $this->Post->read();
+    } else {
+        if($this->Post->save($this->request->data)){
+            $this->Session->setFlash('記事を更新しました！', 'default', array('class' => 'success'));
+            return $this->redirect(array('action' => 'index'));
+        }
+    }
+        
+    }
+
 }

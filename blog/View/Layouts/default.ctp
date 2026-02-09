@@ -21,12 +21,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
+	
 	<title>
 	 <?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
-		echo $this->Html->meta('icon');
 
+		echo $this->Html->script('https://code.jquery.com/jquery-3.6.0.min.js');
+		echo $this->Html->meta('icon');
 		echo $this->Html->css('cake.generic');
 
 		echo $this->fetch('meta');
@@ -58,5 +60,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+	<script>
+$(function() {
+    // #flashMessage（または .message）が出ていたら、3秒待ってから1秒かけて消す
+    $('#flashMessage, .message').delay(3000).fadeOut(1000);
+});
+</script>
 </body>
 </html>
