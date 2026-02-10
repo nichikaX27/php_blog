@@ -54,6 +54,9 @@ class PostsController extends AppController {
             $this->Session->setFlash('記事を更新しました！', 'default', array('class' => 'success'));
             return $this->redirect(array('action' => 'index'));
         }
+        else {
+            $this->Session->setFlash('記事の更新に失敗しました。もう一度やり直してください。', 'default', array('class' => 'error'));
+        }
     }
         
     }
