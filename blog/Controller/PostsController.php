@@ -61,4 +61,27 @@ class PostsController extends AppController {
         
     }
 
+    public function delete($id = null) {
+    if($this->request->is('get')){
+        throw new MethodNotAllowedException();
+    }
+
+    if($this->Post->delete($id)){
+
+        if($this->request->is('ajax')){
+            //json返す場合ここに追加
+            $this->render(false);
+            return;
+        }
+
+        $this->Session->setFlash('記事を削除しました。', 'default', array('class' => 'success'));
+        return $this->redirect(array('action' => 'index'));
+    }
+    else {
+        $this->Session->setFlash('記事の削除に失敗しました。もう一度やり直してください。', 'default', array('class' => 'error'));
+        return $this->redirect(array('action' => 'index'));
+    }
+
+    }
+
 }
