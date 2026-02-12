@@ -11,4 +11,12 @@ public $validate = array(
         'message' => '本文を入力してください'
 )
 );
+
+public $hasMany = array (
+    'Comment' => array(
+        'className' => 'Comment',
+        'dependent' => true
+    )
+);
+
 }
