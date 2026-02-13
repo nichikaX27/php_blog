@@ -16,4 +16,20 @@ class CommentsController extends AppController {
             ));
         }
     }
+
+    public function delete($id = null){
+        if (!$this->request->is('post')) {
+            throw new MethodNotAllowedException();
+        }
+
+        if($this->Comment->delete($id)){
+            if($this->request->is('ajax')){
+                $this->autoRender = false;
+                return true;
+            } else {
+                $this->Session->setFlash('コメントを削除しました。', 'default', array('class' => 'success'));
+                return $this->redirect($this->referer());
+            }
+        }
+    }
 }
