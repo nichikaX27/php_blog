@@ -30,6 +30,8 @@ echo $this->Form->input('Comment.post_id', array('type' => 'hidden', 'value' => 
 echo $this->Form->end('コメントを投稿する');
 ?>
 
+<p><?php echo $this->Html->link('記事一覧へ戻る', array('action' => 'index')); ?></p>
+
 <script>
     $(function(){
         $('.comment-delete').attr('onclick','').click(function(e){

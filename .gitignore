@@ -38,6 +38,5 @@ Thumbs.db
 
 
 #　Security#
-/blog/Config/database.php
-/blog/tmp/*
-!/blog/tmp/empty
+/app/tmp/*
+!/app/tmp/empty
