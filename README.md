@@ -1,3 +1,26 @@
+#　プロジェクトの概要
+CakePHP 2.xを使用した、コメント機能付きのブログアプリケーションです。
+インターンシップの課題として、基本的なCRUD処理からAjaxによる非同期通信までを実装しました。
+
+# URL
+https://phppractice.sakura.ne.jp/blog/cakephp-2.10.24/
+
+#　実装機能
+- 記事のCRUD（投稿・一覧表示・詳細表示・編集・削除）
+- コメント投稿機能（記事詳細ページから投稿可能）
+- Ajax削除機能
+  記事およびコメントの削除を、ページのリロードなしで実行できます。
+
+# 技術スタック
+Backend: PHP 7.4 /CakePHP 2.x (v2.10.24)
+Frontend: HTML, CSS, JavaScript (jQuery)
+Database: MySQL
+Infrastructure: さくらインターネット（共有サーバ）
+
+# 環境設定に関する補足
+公開環境（さくらサーバー）のディレクトリ構造に合わせ、.htaccess で RewriteBase の設定を最適化しています。
+セキュリティのため、公開リポジトリには app/Config/database.php を含めていません。
+
 # CakePHP
 
 [![Latest Stable Version](https://poser.pugx.org/cakephp/cakephp/v/stable.svg)](https://packagist.org/packages/cakephp/cakephp)
