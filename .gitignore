@@ -40,3 +40,4 @@ Thumbs.db
 #　Security#
 /app/tmp/*
 !/app/tmp/empty
+/app/backup.sql

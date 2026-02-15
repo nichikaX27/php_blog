@@ -1,4 +1,4 @@
-# Uncomment the following to prevent the httpoxy vulnerability
+<!-- # Uncomment the following to prevent the httpoxy vulnerability
 # See: https://httpoxy.org/
 #<IfModule mod_headers.c>
 #	RequestHeader unset Proxy
@@ -10,4 +10,13 @@
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^ index.php [L]
+</IfModule> -->
+
+<!-- サーバ環境用 -->
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /blog/cakephp-2.10.24/app/webroot/
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
 </IfModule>
